@@ -12,4 +12,4 @@ def is_overdue(elapsed_time, priority="normal"):
         raise ValueError("Unknown priority level")
         
     # Базовое правило: просрочка строго больше лимита
-    return elapsed_time >= LIMITS[priority]
+    return elapsed_time > LIMITS[priority]

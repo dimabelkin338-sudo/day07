@@ -21,3 +21,15 @@ class SLATests(unittest.TestCase):
 
     def test_high_after_limit(self):
         self.assertTrue(is_overdue(31, "high"))
+    
+    def test_negative_elapsed(self):
+     with self.assertRaises(ValueError):
+         is_overdue(-1)
+
+    def test_unknown_priority(self):
+     with self.assertRaises(ValueError):
+         is_overdue(10, "urgent")
+
+    
+
+     
